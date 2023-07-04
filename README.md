@@ -44,3 +44,13 @@ flutter create tiktok_flutter
 - main.dart 에서 theme 의 scaffoldBackgroundColor 를 설정하면 전체 scaffold 의 디폴트 색상을 설정핧수 있다.
 - main.dart 에서 theme 의 appBarTheme 를 설정하면 전체 AppBar 의 디폴트 스타일 설정을 할수 있다.
 - main.dart 에서의 전역설정 외에 다른 설정은 해당 스크린에서 추가하면 된다. (당연히 덮어씌워짐)
+
+## Username Screen
+
+- input form 을 관리하는 위젯에서는 StatefuleWidget 을 사용한다.
+- TextEditingController 를 선언하고 TextField 위젯의 controller 속성을 사용하여 state 를 관리할수 있다.
+- initState() 메서드에서 컨트롤러에 대한 event listiner 를 추가할수 있다.
+- 추가한 addListener 에서 setState 를 통해 컨트롤러에서 관리하고 있는 text state 를 변수에 할당해준다.
+- 변수의 값에 따라 버튼 색을 바꿔준다.
+- AnimatedContainer 를 사용해서 duration 속성을 설정하면 transition 효과를 줄수 있다.ㅎ
+
