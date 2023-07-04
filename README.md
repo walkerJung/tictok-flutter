@@ -2,6 +2,8 @@
 
 flutter create tiktok_flutter
 
+# PROJECT SETUP
+
 ## Initialization
 
 - primary color 을 틱톡 색상으로 변경 0xFFE9435A
@@ -13,6 +15,8 @@ flutter create tiktok_flutter
 - 디자인시스템이 없는경우 이런식으로 미리 정의해둔 값들로 UI 를 만들면 일관성 있게 작업할수 있다.
 - size 를 사용하여 SizedBox 를 만들어서 사이 간격을 일관성 있게 작업하기 위해 gaps.dart 를 정의했다.
 - constants 폴더에 있는 class 들은 utility class 이다.
+
+# AUTHENTICATION
 
 ## Sign Up Screen
 
@@ -34,3 +38,9 @@ flutter create tiktok_flutter
 - Expanded 위젯은 Row 나 Column 안에서 점유할수 있는 최대를 점유한다.
 - Stack 위젯은 자식 위젯들을 위로 쌓아주는 위젯이다.
 - Stack 에 있는 위젯 하나의 정렬만 바꾸려면 Align 위젯을 사용하면 된다.
+
+## Sign Up Form
+
+- main.dart 에서 theme 의 scaffoldBackgroundColor 를 설정하면 전체 scaffold 의 디폴트 색상을 설정핧수 있다.
+- main.dart 에서 theme 의 appBarTheme 를 설정하면 전체 AppBar 의 디폴트 스타일 설정을 할수 있다.
+- main.dart 에서의 전역설정 외에 다른 설정은 해당 스크린에서 추가하면 된다. (당연히 덮어씌워짐)

@@ -8,7 +8,7 @@ import 'package:tiktok_flutter/features/authentication/widgets/auth_button.dart'
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
 
-  void onLoginTap(BuildContext context) {
+  void _onLoginTap(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(
       builder: (context) => const LoginScreen(),
     ));
@@ -44,7 +44,7 @@ class SignUpScreen extends StatelessWidget {
               Gaps.v40,
               AuthButton(
                   icon: FaIcon(FontAwesomeIcons.user),
-                  text: 'Use phone or email'),
+                  text: 'Use email & password'),
               Gaps.v16,
               AuthButton(
                   icon: FaIcon(FontAwesomeIcons.apple),
@@ -54,7 +54,7 @@ class SignUpScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.grey.shade100,
+        color: Colors.grey.shade50,
         elevation: 2,
         child: Container(
           child: Padding(
@@ -67,7 +67,7 @@ class SignUpScreen extends StatelessWidget {
                 const Text('Already have an account?'),
                 Gaps.h5,
                 GestureDetector(
-                  onTap: () => onLoginTap(context),
+                  onTap: () => _onLoginTap(context),
                   child: Text(
                     'Log in',
                     style: TextStyle(
