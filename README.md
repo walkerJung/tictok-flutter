@@ -60,3 +60,16 @@ flutter create tiktok_flutter
 - Controller 는 dispose() 에서 항상 없애는걸 신경써야한다. 수동으로 조작해야 하는 부분이고 그렇지 않을경우 crash 가 발생한다.
 - initState() 에서 super.initState() 가 가장 먼저 호출되는것처럼, dispose() 에서도 super.dispose() 가 가장 마지막에 호출되어야 한다.
 - stateful widget 안에서는 context 에 자유롭게 접근할수 있으므로 Navigator.of 를 사용하여 화면 이동을 할때 context 를 인자로 넘기지 않아도 된다.
+
+## Email Screen
+
+- TextField 위젯의 decoration 속성의 errorText 에 정규식 관련 함수를 추가하여 error text 를 출력할수 있다.
+- TextField 위젯의 keyboardType 속성을 설정하면 사용자가 입력하기 편한 키보드가 노출된다.
+- TextField 위젯의 autocorrect 속성을 설정하면 사용자 키보드에 자동 완료 추천이 사라진다.
+- Flutter 에서 제공하는 FocusScope 를 사용하면 TextField 외에 다른 부분을 클릭했을때 focus 를 지울수 있다.
+
+    void _onScaffoldTap() {
+        FocusScope.of(context).unfocus();
+    }
+
+- TextField 위젯의 onEditingComplete 속성을 설정하면 키보드의 Done 을 눌렀을때 일어날 이벤트를 설정할수 있다.
