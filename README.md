@@ -52,5 +52,11 @@ flutter create tiktok_flutter
 - initState() 메서드에서 컨트롤러에 대한 event listiner 를 추가할수 있다.
 - 추가한 addListener 에서 setState 를 통해 컨트롤러에서 관리하고 있는 text state 를 변수에 할당해준다.
 - 변수의 값에 따라 버튼 색을 바꿔준다.
-- AnimatedContainer 를 사용해서 duration 속성을 설정하면 transition 효과를 줄수 있다.ㅎ
+- AnimatedContainer 를 사용해서 duration 속성을 설정하면 transition 효과를 줄수 있다.
 
+## FormButton
+
+- AnimatedDefaultTextStyle 위젯을 사용하여 텍스트 관련 애니메이션을 추가할수 있다.
+- Controller 는 dispose() 에서 항상 없애는걸 신경써야한다. 수동으로 조작해야 하는 부분이고 그렇지 않을경우 crash 가 발생한다.
+- initState() 에서 super.initState() 가 가장 먼저 호출되는것처럼, dispose() 에서도 super.dispose() 가 가장 마지막에 호출되어야 한다.
+- stateful widget 안에서는 context 에 자유롭게 접근할수 있으므로 Navigator.of 를 사용하여 화면 이동을 할때 context 를 인자로 넘기지 않아도 된다.
