@@ -27,3 +27,10 @@ flutter create tiktok_flutter
 - 폴더 구조를 기능단위로 가져가고, 해당 기능에서 사용되는 스크린을 모으고, 해당 기능에서 사용되는 공통의 위젯들을 관리하는 폴더를 만들어서 사용한다.
 - 클래스에 속성을 추가하고 생성자에 추가한 속성을 편하게 넣으려면 생성자에서 Code Action 을 실행하면 된다.
 - FractionallySizedBox 는 부모의 크기에 영향을 받는 위젯이다. widthFactor 인자로 설정할수 있다.
+
+## AuthButton
+
+- flutter pub add font_awesome_flutter
+- Expanded 위젯은 Row 나 Column 안에서 점유할수 있는 최대를 점유한다.
+- Stack 위젯은 자식 위젯들을 위로 쌓아주는 위젯이다.
+- Stack 에 있는 위젯 하나의 정렬만 바꾸려면 Align 위젯을 사용하면 된다.
