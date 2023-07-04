@@ -73,3 +73,9 @@ flutter create tiktok_flutter
     }
 
 - TextField 위젯의 onEditingComplete 속성을 설정하면 키보드의 Done 을 눌렀을때 일어날 이벤트를 설정할수 있다.
+
+## Password Screen
+
+- TextField 의 decoration 속성에 suffix, prefix, suffixIcon, prefixIcon 을 사용하여 필요한 위젯이나 아이콘을 추가할수 있다.
+- suffix 의 mainAxisSize 를 max 로 하면 모든 영역을 점유 하고, min 으로 하면 최소 영역만 점유 한다.
+- TextField 의 obscureText 속성을 true 로 설정하면 비밀번호 입력으로 바뀐다.
