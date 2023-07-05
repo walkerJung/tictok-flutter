@@ -79,3 +79,9 @@ flutter create tiktok_flutter
 - TextField 의 decoration 속성에 suffix, prefix, suffixIcon, prefixIcon 을 사용하여 필요한 위젯이나 아이콘을 추가할수 있다.
 - suffix 의 mainAxisSize 를 max 로 하면 모든 영역을 점유 하고, min 으로 하면 최소 영역만 점유 한다.
 - TextField 의 obscureText 속성을 true 로 설정하면 비밀번호 입력으로 바뀐다.
+
+## Birthday Screen
+
+- bottomNavigationBar 에 CupertinoDatePicker 위젯을 사용하여 생년월일을 입력을 관리한다.
+- 생일 정보 Controller 를 initState 에서 오늘 날짜로 바꿔주고, onDateTimeChanged 속성에도 같은 함수를 전달하여 날짜가 바뀔때마다 생일 정보 Controller 를 갱신시킨다.
+- CupertinoDatePicker 위젯의 maximumDate, initialDate, mode 등을 설정하여 필요에 맞게 커스텀 할수 있다.
