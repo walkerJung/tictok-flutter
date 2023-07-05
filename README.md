@@ -114,3 +114,16 @@ flutter create tiktok_flutter
 - 여러개의 입력을 관리하는게 아니라면 TextField 를 사용하는게 좋다.
 - 여러개의 입력을 관리할땐 Form 을 사용하는게 좋다.
 - 입력과 관련된 화면에서 unfocus 를 잘 사용하면 UX에 도움을 준다.
+- TextFormField 에 autovalidateMode: AutovalidateMode.always 설정을 추가하면 submit 을 누르기 전에도 계속 유효성 체크를 한다.
+
+# ONBOARDING
+
+## Introduction
+
+- 앱이 구동됬을때 앱에 대한 소개나 필요한 사전정보 등을 담을수 있는 부분에 대해서 개발할 예정입니다.
+
+## Interests Screen
+
+- 구현해야할 화면의 depth 가 깊다면 main.dart 에서 home 속성에 개발하려는 스크린을 바로 추가하면 편하다.
+- Wrap 위젯을 사용하면 flex wrap 과 같은 기능을 사용할수 있다.
+- Wrap 위젯의 spacing, runSpacing 속성을 사용하여 간격을 조절할수 있다.
