@@ -127,3 +127,38 @@ flutter create tiktok_flutter
 - 구현해야할 화면의 depth 가 깊다면 main.dart 에서 home 속성에 개발하려는 스크린을 바로 추가하면 편하다.
 - Wrap 위젯을 사용하면 flex wrap 과 같은 기능을 사용할수 있다.
 - Wrap 위젯의 spacing, runSpacing 속성을 사용하여 간격을 조절할수 있다.
+
+## Scroll Animations
+
+- scroll 이벤트를 사용하려면 ScrollController 를 사용한다.
+
+    final ScrollController _scrollController = ScrollController();
+
+- scroll 이벤트를 사용할 Scaffold 의 body 부분을 Scrollbar 위젯으로 감싸주고, controller 속성에 전달한다.
+
+    Scrollbar(
+        controller: _scrollController
+        ...
+    )
+
+- initState() 에서 해당 컨트롤러에 이벤트 리스너를 추가해준다.
+
+    void initState() {
+        super.initState();
+        _scrollController.addListener(_onScroll);
+    }
+
+- 스크롤 컨트롤러에서 offset 을 확인하면 현재 스크롤의 위치를 알수 있고, 이 위치를 기반으로 이벤트를 추가한다.
+
+    void _onScroll() {
+        if (_scrollController.offset > 110) {
+        if (_showTitle) return;
+        _showTitle = true;
+        } else {
+        _showTitle = false;
+        }
+        setState(() {});
+    }
+
+- AnimatedContainer 를 사용하여 transition 효과를 줄수 있다.
+- 컨트롤러를 사용할땐 항상 dispose() 를 사용해서 컨트롤러 연결을 종료해주도록 한다.
