@@ -2,7 +2,7 @@
 
 flutter create tiktok_flutter
 
-# PROJECT SETUP
+# 1. PROJECT SETUP
 
 ## Initialization
 
@@ -16,7 +16,7 @@ flutter create tiktok_flutter
 - size 를 사용하여 SizedBox 를 만들어서 사이 간격을 일관성 있게 작업하기 위해 gaps.dart 를 정의했다.
 - constants 폴더에 있는 class 들은 utility class 이다.
 
-# AUTHENTICATION
+# 2. AUTHENTICATION
 
 ## Sign Up Screen
 
@@ -116,7 +116,7 @@ flutter create tiktok_flutter
 - 입력과 관련된 화면에서 unfocus 를 잘 사용하면 UX에 도움을 준다.
 - TextFormField 에 autovalidateMode: AutovalidateMode.always 설정을 추가하면 submit 을 누르기 전에도 계속 유효성 체크를 한다.
 
-# ONBOARDING
+# 3. ONBOARDING
 
 ## Introduction
 
