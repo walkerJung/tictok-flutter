@@ -85,3 +85,26 @@ flutter create tiktok_flutter
 - bottomNavigationBar 에 CupertinoDatePicker 위젯을 사용하여 생년월일을 입력을 관리한다.
 - 생일 정보 Controller 를 initState 에서 오늘 날짜로 바꿔주고, onDateTimeChanged 속성에도 같은 함수를 전달하여 날짜가 바뀔때마다 생일 정보 Controller 를 갱신시킨다.
 - CupertinoDatePicker 위젯의 maximumDate, initialDate, mode 등을 설정하여 필요에 맞게 커스텀 할수 있다.
+
+## Login Form
+
+- Form 위젯과 TextFormField 위젯을 사용하여 여러개의 Form 유효성 관리를 할수 있다.
+- Controller 로 state 를 관리할때 처럼 Form 의 글로벌키가 필요하다
+
+    final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+- Form 위젯에 key 속성에 할당켜준다.
+
+    Form(
+        key: _formKey
+    )
+
+- _formKey.currentState 에 다양한 메서드로 유효성 검사 및 값 저장을 편리하게 할수 있다.
+
+    void _onSubmitTap() {
+        if (_formKey.currentState != null) {
+            if (_formKey.currentState!.validate()) {
+                _formKey.currentState!.save();
+            }
+        }
+    }
