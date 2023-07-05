@@ -108,3 +108,9 @@ flutter create tiktok_flutter
             }
         }
     }
+
+## Conclusions
+
+- 여러개의 입력을 관리하는게 아니라면 TextField 를 사용하는게 좋다.
+- 여러개의 입력을 관리할땐 Form 을 사용하는게 좋다.
+- 입력과 관련된 화면에서 unfocus 를 잘 사용하면 UX에 도움을 준다.
