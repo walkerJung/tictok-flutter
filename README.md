@@ -220,3 +220,7 @@ flutter create tiktok_flutter
 ## NavigationBar
 
 - BottomNavigationBar 는 material design 2 의 사양을 따르고, NavigationBar 는 material design 3 의 사양을 따른다.
+
+## Cupertino TabBar
+
+- CupertinoTabScaffold 는 IOS 디자인과 유사한 레이아웃을 제공한다.
