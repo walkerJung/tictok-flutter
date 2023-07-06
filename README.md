@@ -232,3 +232,16 @@ flutter create tiktok_flutter
     mainAxisSize: MainAxisSize.min
 
 - 하단 네비게이션을 클릭할때 유저 편의성을 위해 Container 위젯을 Expanded 로 감싸주면 사용하기 좋다.
+
+## Stateful Navigation part One
+
+- 동일한 위젯을 여러개 사용할때 GlobalKey 를 전달해주면 각각의 인스턴스로 사용할수 있다.
+- https://github.com/nomadcoders/tiktok_clone/commit/5819b1a4535d5b23bd2eb77ab41bfe1e86aafcc5
+
+## Stateful Navigation part Two
+
+- Offstage 위젯을 사용하면 사용자에게 보여지지 않을때도 스크린을 숨겨놓을수 있다.
+- Body 에 Stack 으로 Offstage 위젯들을 쌓아놓고, 인덱스에 따라 offstage 속성을 설정하면 state 를 유지하는 네비게이션과 스크린을 만들수 있다.
+- 너무 많은 Offstage 위젯은 성능저하를 유발할수도 있다.
+- https://github.com/nomadcoders/tiktok_clone/commit/fe0dd51ddac68ce7848e1dfddf09b4c0a444acb4
+
