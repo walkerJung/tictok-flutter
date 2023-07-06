@@ -32,7 +32,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       body: screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
-        onTap: (index) => print(index),
+        onTap: _onTap,
         selectedItemColor: Theme.of(context).primaryColor,
         items: const [
           BottomNavigationBarItem(
