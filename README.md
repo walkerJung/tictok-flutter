@@ -216,3 +216,7 @@ flutter create tiktok_flutter
 - BottomNavigationBar 의 currentIndex 속성을 사용해 선택되어있는 탭을 설정할수 있다.
 - onTap 속성에 콜백함수를 전달하여 index 를 변경해준다.
 - 선택 되어있는 네비게이션에 따라 백그라운드 색을 변경할수도 있고 다양한 설정들이 존재한다.
+
+## NavigationBar
+
+- BottomNavigationBar 는 material design 2 의 사양을 따르고, NavigationBar 는 material design 3 의 사양을 따른다.
