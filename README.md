@@ -252,3 +252,21 @@ flutter create tiktok_flutter
 - clipBehavior 속성은 overflow 와 같은 속성이다.
 
     clipBehavior: Clip.none
+
+# VIDEO TIMELINE
+
+## Infinite Scrolling
+
+- PageView 안에 들어가는 Container 들은 PageView 의 크기만큼 점유한다.
+- PageView 의 pageSnapping 속성을 사용하면 Container 이동 시 이벤트가 발생한다.
+- PageView 또는 ListView 의 builder 메서드를 사용해서 렌더링 성능저하 이슈를 줄일수 있다.
+- builder 는 context 와 index 정보를 가지고 렌더링을 수행한다. 몇개의 아이템을 가지고 있는지 명시해줘야 한다.
+
+    PageView.builder(
+        itemCount: 4,
+        itemBuilder: (context, index) => Container(
+            color: colors[index],
+        )
+    )
+
+- onPageChaged 속성에 page 를 인자로 받는 콜백 함수를 추가해서 itemCount 를 갱신 시키는 식으로 무한스크롤을 구현할수 있다.
