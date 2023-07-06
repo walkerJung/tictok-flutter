@@ -162,3 +162,12 @@ flutter create tiktok_flutter
 
 - AnimatedContainer 를 사용하여 transition 효과를 줄수 있다.
 - 컨트롤러를 사용할땐 항상 dispose() 를 사용해서 컨트롤러 연결을 종료해주도록 한다.
+
+## Tutorial Screen
+
+- DefaultTabController 위젯을 사용하여 3페이지의 튜토리얼 스크린을 만들었다.
+- DefaultTabController 위젯과 TabBarView, TabPageSelector 는 같이 사용되어야 한다.
+- DefaultTabController 의 length 속성을 설정하여 페이지 수를 정할수 있고, 그 설정에 맞춰 TabBarView 의 children 속성에 위젯을 넣어줘야 한다.
+- 이런식으로 할수도 있고 DefaultTabController 대신 TabBarView 에 controller 를 추가하여 개발할수도 있다.
+- bottomNavigationBar 에 TabPageSelector 위젯을 추가해서 현재 몇 페이지 인지 확인할수 있는 정보를 편리하게 제공할수 있다.
+
