@@ -269,4 +269,15 @@ flutter create tiktok_flutter
         )
     )
 
-- onPageChaged 속성에 page 를 인자로 받는 콜백 함수를 추가해서 itemCount 를 갱신 시키는 식으로 무한스크롤을 구현할수 있다.
+- onPageChanged 속성에 page 를 인자로 받는 콜백 함수를 추가해서 itemCount 를 갱신 시키는 식으로 무한스크롤을 구현할수 있다.
+
+## PageController
+
+- flutter 에서 무언가를 제어하고 싶을땐 controller 를 사용하면 된다.
+- controller 객체 내부에 있는 메서드를 사용하여 에니메이션 효과를 줄수 있다.
+
+    _pageController.animateToPage(
+      page,
+      duration: const Duration(milliseconds: 100),
+      curve: Curves.linear,
+    );
