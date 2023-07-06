@@ -224,3 +224,11 @@ flutter create tiktok_flutter
 ## Cupertino TabBar
 
 - CupertinoTabScaffold 는 IOS 디자인과 유사한 레이아웃을 제공한다.
+
+## Custom NavigationBar
+
+- Column 위젯은 기본적으로 세로 공간을 최대한으로 점유하므로 mainAxisSize 속성을 신경써줘야 한다.
+
+    mainAxisSize: MainAxisSize.min
+
+- 하단 네비게이션을 클릭할때 유저 편의성을 위해 Container 위젯을 Expanded 로 감싸주면 사용하기 좋다.
