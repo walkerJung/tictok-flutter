@@ -281,3 +281,35 @@ flutter create tiktok_flutter
       duration: const Duration(milliseconds: 100),
       curve: Curves.linear,
     );
+
+## Video Player
+
+- flutter pub add video_player
+- Positioned.fill 은 화면 전체를 채우는 위젯을을 만들어준다.
+- statefull 위젯에서 state 는 widget.~ 으로 widget 에 접근할수 있다.
+- VideoPlayer 위젯에 controller 를 전달해서 비디오를 재생할수 있다.
+- VideoPlayerController 를 사용할때 항상 initialize 하는 단계를 거처야 한다.
+
+    @override
+    void initState() {
+        super.initState();
+        _initVideoPlayer();
+    }
+
+    void _initVideoPlayer() async {
+        await _videoPlayerController.initialize();
+        _videoPlayerController.play();
+        _videoPlayerController.addListener(_onVideoChange);
+        setState(() {});
+    }
+
+    void _onVideoChange() {
+        if (_videoPlayerController.value.isInitialized) {
+            if (_videoPlayerController.value.duration ==
+                _videoPlayerController.value.position) {
+                widget.onVideoFinished();
+            }
+        }
+    }
+
+- initialize 를 끝낸 비디오의 길이와 현재 재생되고 있는 비디오의 재생시간이 같으면 비디오가 끝났다는걸 체크하고 전달받은 onVideoFinished 함수를 실행시켜서 다음 페이지로 넘어간다.
