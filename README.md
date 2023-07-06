@@ -171,3 +171,32 @@ flutter create tiktok_flutter
 - 이런식으로 할수도 있고 DefaultTabController 대신 TabBarView 에 controller 를 추가하여 개발할수도 있다.
 - bottomNavigationBar 에 TabPageSelector 위젯을 추가해서 현재 몇 페이지 인지 확인할수 있는 정보를 편리하게 제공할수 있다.
 
+## AnimatedCrossFade
+
+- AnimatedCrossFade 위젯으로 두가지 화면에 에니메이션 효과를 줄수 있다.
+- crossFadeState 속성에서 속성에 따라 보여지는 화면을 ( firstChild, secondChild ) 를 선택할수 있다.
+- GestureDetector 의 onPanUpdate, onPanend 로 드래그 관련 이벤트를 만들수 있다.
+
+    void _onPanUpdate(DragUpdateDetails details) {
+        if (details.delta.dx > 0) {
+            setState(() {
+                _direction = Direction.right;
+            });
+        } else {
+            setState(() {
+                _direction = Direction.left;
+            });
+        }
+    }
+
+    void _onPanEnd(DragEndDetails details) {
+        if (_direction == Direction.left) {
+            setState(() {
+                _showingPage = Page.second;
+            });
+        } else {
+            setState(() {
+                _showingPage = Page.first;
+            });
+        }
+    }
