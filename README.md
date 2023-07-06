@@ -200,3 +200,12 @@ flutter create tiktok_flutter
             });
         }
     }
+
+# TAB NAVIGATION
+
+## pushAndRemoveUntil
+
+- Navigator 로 화면을 이동할때 스택 히스토리가 남으면 안되는 이동에서는 pushAndRemoveUntill 을 사용하여 뒤로가기를 막을수 있다.
+- 두번째 인자의 return 값이 설정 방법이다
+
+    (route) => true or (route) => false
