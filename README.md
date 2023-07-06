@@ -245,3 +245,10 @@ flutter create tiktok_flutter
 - 너무 많은 Offstage 위젯은 성능저하를 유발할수도 있다.
 - https://github.com/nomadcoders/tiktok_clone/commit/fe0dd51ddac68ce7848e1dfddf09b4c0a444acb4
 
+## Post Video Button
+
+- Positioned 위젯은 Stack 내부의 요소들을 이동시킬수 있게 해준다.
+- Positioned 위젯은 움직일때 기준이 필요하다. 그래서 3번째 children 으로 Container 를 사용한다. 마지막에 쌓인 Container 를 기준으로 빨간색, 파란색 Positioned 위젯들이 움직인다.
+- clipBehavior 속성은 overflow 와 같은 속성이다.
+
+    clipBehavior: Clip.none
