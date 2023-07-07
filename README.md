@@ -370,3 +370,21 @@ flutter create tiktok_flutter
 - _animationController 에 addListener 를 추가해주고 그 곳에서 setState() 를 실행시켜준다.
 - animation controller 의 값이 변하는걸 알수 있는 이유는 animation controller 의 reverse(), forward() 메서드를 사용하기 때문이다.
 
+## AnimatedBuilder
+
+- animation 을 빌드하는 다른 방법은 AnimatedBuilder 위젯을 사용하는 것이다.
+- controller 만 사용할땐 이벤트를 추가해서 setState() 메서드를 사용해 다시 랜더링을 진행했다.
+- AnimatedBuilder 위젯에 animation 에 animation controller 를 추가해주면, builder 속성에서 animation controller 의 변화를 감지하고 return 해준다.
+- child 는 animation 을 적용하려는 대상을 의미한다.
+
+    ```
+    AnimatedBuilder(
+        animation: _animationController,
+        builder: (context, child) {
+            return Transform.scale(
+                scale: _animationController.value,
+                child: child,
+            );
+        },
+    )
+    ```
