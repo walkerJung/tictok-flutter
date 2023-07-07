@@ -320,4 +320,14 @@ flutter create tiktok_flutter
 - 각각의 의존성들은 공식문서를 보면 메서드 내에 전달되는 인자값들이 자세히 나와있으니 사용할때는 항상 공식문서를 참고하는게 좋다.
 - Positioned 위젯은 항상 Stack 위젯의 자식으로 존재해야 한다. Positioned 위젯을 다른 위젯으로 감싸주면 안된다.
 - IgnorePointer 위젯으로 감싸주는 부분은 포인터가 무시하게 된다.
+- VisibilityDetector 위젯을 사용해서 스크린에 전체 화면이 보일때 영상이 재생되도록 할수 있다.
 
+## AnimationController
+
+- animation controller 를 사용할때 class 에 mixin 을 추가해줘야 한다.
+
+    class _VideoPostState extends State<VideoPost> with SingleTickerProviderStateMixin
+
+- animation controller 를 만들고 lowerBound (최소값), upperBound(최대값), value(기본값), duration 을 설정해준다.
+- _animationController 에 addListener 를 추가해주고 그 곳에서 setState() 를 실행시켜준다.
+- animation controller 의 값이 변하는걸 알수 있는 이유는 animation controller 의 reverse(), forward() 메서드를 사용하기 때문이다.
