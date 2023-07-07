@@ -313,3 +313,11 @@ flutter create tiktok_flutter
     }
 
 - initialize 를 끝낸 비디오의 길이와 현재 재생되고 있는 비디오의 재생시간이 같으면 비디오가 끝났다는걸 체크하고 전달받은 onVideoFinished 함수를 실행시켜서 다음 페이지로 넘어간다.
+
+## VisibilityDetector
+
+- pubspec.yaml 파일에 dependencies 아래 visibility_detecor: 0.3.3 추가한다.
+- 각각의 의존성들은 공식문서를 보면 메서드 내에 전달되는 인자값들이 자세히 나와있으니 사용할때는 항상 공식문서를 참고하는게 좋다.
+- Positioned 위젯은 항상 Stack 위젯의 자식으로 존재해야 한다. Positioned 위젯을 다른 위젯으로 감싸주면 안된다.
+- IgnorePointer 위젯으로 감싸주는 부분은 포인터가 무시하게 된다.
+
