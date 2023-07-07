@@ -395,3 +395,7 @@ flutter create tiktok_flutter
 - vsync 는 위젯이 안보일때 에니메이션을 막아 불필요한 리소스 사용을 줄여주는 것이다. vsync 를 사용하기 위해 SingleTickerProviderStateMixin 를 추가해줘야 한다.
 - SingleTickerProviderStateMixin 안에 있는 Ticker 가 부드러운 에니메이션을 가능하게 해준다.
 - 즉 에니메이션은 Ticker 가 필수로 필요하고, 화면이 활성되어있는 위젯에만 적용되어야 하니 SingleTickerProviderStateMixin 가 필요하다. 
+
+## Video UI
+
+- CircleAvatar 위젯을 사용하면 프로필 이미지를 쉽게 만들수 있다
