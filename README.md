@@ -16,6 +16,8 @@ flutter create tiktok_flutter
 - size 를 사용하여 SizedBox 를 만들어서 사이 간격을 일관성 있게 작업하기 위해 gaps.dart 를 정의했다.
 - constants 폴더에 있는 class 들은 utility class 이다.
 
+<br><br>
+
 # 2. AUTHENTICATION
 
 ## Sign Up Screen
@@ -91,16 +93,21 @@ flutter create tiktok_flutter
 - Form 위젯과 TextFormField 위젯을 사용하여 여러개의 Form 유효성 관리를 할수 있다.
 - Controller 로 state 를 관리할때 처럼 Form 의 글로벌키가 필요하다
 
+    ```
     final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+    ```
 
 - Form 위젯에 key 속성에 할당켜준다.
 
+    ```
     Form(
         key: _formKey
     )
+    ```
 
 - _formKey.currentState 에 다양한 메서드로 유효성 검사 및 값 저장을 편리하게 할수 있다.
 
+    ```
     void _onSubmitTap() {
         if (_formKey.currentState != null) {
             if (_formKey.currentState!.validate()) {
@@ -108,6 +115,7 @@ flutter create tiktok_flutter
             }
         }
     }
+    ```
 
 ## Conclusions
 
@@ -115,6 +123,8 @@ flutter create tiktok_flutter
 - 여러개의 입력을 관리할땐 Form 을 사용하는게 좋다.
 - 입력과 관련된 화면에서 unfocus 를 잘 사용하면 UX에 도움을 준다.
 - TextFormField 에 autovalidateMode: AutovalidateMode.always 설정을 추가하면 submit 을 누르기 전에도 계속 유효성 체크를 한다.
+
+<br><br>
 
 # 3. ONBOARDING
 
@@ -132,24 +142,31 @@ flutter create tiktok_flutter
 
 - scroll 이벤트를 사용하려면 ScrollController 를 사용한다.
 
+    ```
     final ScrollController _scrollController = ScrollController();
+    ```
 
 - scroll 이벤트를 사용할 Scaffold 의 body 부분을 Scrollbar 위젯으로 감싸주고, controller 속성에 전달한다.
 
+    ```
     Scrollbar(
         controller: _scrollController
         ...
     )
+    ```
 
 - initState() 에서 해당 컨트롤러에 이벤트 리스너를 추가해준다.
 
+    ```
     void initState() {
         super.initState();
         _scrollController.addListener(_onScroll);
     }
+    ```
 
 - 스크롤 컨트롤러에서 offset 을 확인하면 현재 스크롤의 위치를 알수 있고, 이 위치를 기반으로 이벤트를 추가한다.
 
+    ```
     void _onScroll() {
         if (_scrollController.offset > 110) {
         if (_showTitle) return;
@@ -159,6 +176,7 @@ flutter create tiktok_flutter
         }
         setState(() {});
     }
+    ```
 
 - AnimatedContainer 를 사용하여 transition 효과를 줄수 있다.
 - 컨트롤러를 사용할땐 항상 dispose() 를 사용해서 컨트롤러 연결을 종료해주도록 한다.
@@ -177,6 +195,7 @@ flutter create tiktok_flutter
 - crossFadeState 속성에서 속성에 따라 보여지는 화면을 ( firstChild, secondChild ) 를 선택할수 있다.
 - GestureDetector 의 onPanUpdate, onPanend 로 드래그 관련 이벤트를 만들수 있다.
 
+    ```
     void _onPanUpdate(DragUpdateDetails details) {
         if (details.delta.dx > 0) {
             setState(() {
@@ -200,15 +219,20 @@ flutter create tiktok_flutter
             });
         }
     }
+    ```
 
-# TAB NAVIGATION
+<br><br>
+
+# 4. TAB NAVIGATION
 
 ## pushAndRemoveUntil
 
 - Navigator 로 화면을 이동할때 스택 히스토리가 남으면 안되는 이동에서는 pushAndRemoveUntill 을 사용하여 뒤로가기를 막을수 있다.
 - 두번째 인자의 return 값이 설정 방법이다
 
+    ```
     (route) => true or (route) => false
+    ```
 
 ## BottomNavigationBar
 
@@ -229,7 +253,9 @@ flutter create tiktok_flutter
 
 - Column 위젯은 기본적으로 세로 공간을 최대한으로 점유하므로 mainAxisSize 속성을 신경써줘야 한다.
 
+    ```
     mainAxisSize: MainAxisSize.min
+    ```
 
 - 하단 네비게이션을 클릭할때 유저 편의성을 위해 Container 위젯을 Expanded 로 감싸주면 사용하기 좋다.
 
@@ -251,9 +277,13 @@ flutter create tiktok_flutter
 - Positioned 위젯은 움직일때 기준이 필요하다. 그래서 3번째 children 으로 Container 를 사용한다. 마지막에 쌓인 Container 를 기준으로 빨간색, 파란색 Positioned 위젯들이 움직인다.
 - clipBehavior 속성은 overflow 와 같은 속성이다.
 
+    ```
     clipBehavior: Clip.none
+    ```
 
-# VIDEO TIMELINE
+<br><br>
+
+# 5. VIDEO TIMELINE
 
 ## Infinite Scrolling
 
@@ -262,12 +292,14 @@ flutter create tiktok_flutter
 - PageView 또는 ListView 의 builder 메서드를 사용해서 렌더링 성능저하 이슈를 줄일수 있다.
 - builder 는 context 와 index 정보를 가지고 렌더링을 수행한다. 몇개의 아이템을 가지고 있는지 명시해줘야 한다.
 
+    ```
     PageView.builder(
         itemCount: 4,
         itemBuilder: (context, index) => Container(
             color: colors[index],
         )
     )
+    ```
 
 - onPageChanged 속성에 page 를 인자로 받는 콜백 함수를 추가해서 itemCount 를 갱신 시키는 식으로 무한스크롤을 구현할수 있다.
 
@@ -276,11 +308,13 @@ flutter create tiktok_flutter
 - flutter 에서 무언가를 제어하고 싶을땐 controller 를 사용하면 된다.
 - controller 객체 내부에 있는 메서드를 사용하여 에니메이션 효과를 줄수 있다.
 
+    ```
     _pageController.animateToPage(
       page,
       duration: const Duration(milliseconds: 100),
       curve: Curves.linear,
     );
+    ```
 
 ## Video Player
 
@@ -290,6 +324,7 @@ flutter create tiktok_flutter
 - VideoPlayer 위젯에 controller 를 전달해서 비디오를 재생할수 있다.
 - VideoPlayerController 를 사용할때 항상 initialize 하는 단계를 거처야 한다.
 
+    ```
     @override
     void initState() {
         super.initState();
@@ -311,6 +346,7 @@ flutter create tiktok_flutter
             }
         }
     }
+    ```
 
 - initialize 를 끝낸 비디오의 길이와 현재 재생되고 있는 비디오의 재생시간이 같으면 비디오가 끝났다는걸 체크하고 전달받은 onVideoFinished 함수를 실행시켜서 다음 페이지로 넘어간다.
 
@@ -326,8 +362,11 @@ flutter create tiktok_flutter
 
 - animation controller 를 사용할때 class 에 mixin 을 추가해줘야 한다.
 
+    ```
     class _VideoPostState extends State<VideoPost> with SingleTickerProviderStateMixin
+    ```
 
 - animation controller 를 만들고 lowerBound (최소값), upperBound(최대값), value(기본값), duration 을 설정해준다.
 - _animationController 에 addListener 를 추가해주고 그 곳에서 setState() 를 실행시켜준다.
 - animation controller 의 값이 변하는걸 알수 있는 이유는 animation controller 의 reverse(), forward() 메서드를 사용하기 때문이다.
+
